@@ -5,6 +5,10 @@ node_js:
 addons:
   chrome: stable
 
+cache:
+directories:
+  - ./node_modules
+
 script:
   - npm run test
   - npm run build -- --base-href /Angular/
