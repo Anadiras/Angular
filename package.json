@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build --base-href /https://github.com/Anadiras/Angular.git/",
-    "test": "ng test",
-    "ci": "npm run test && npm run build"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
