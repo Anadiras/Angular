@@ -1,7 +1,13 @@
+dist: trusty
+sudo: false
+
 language: node_js
 node_js:
   - "12"
 
+
+notifications:
+  email: false
 
 addons:
   chrome: stable
@@ -24,6 +30,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/Angular-alex
+  local_dir: dist/tp-angular
   on:
     branch: master
