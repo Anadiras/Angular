@@ -28,12 +28,12 @@ script:
 
 before_deploy:
   - npm run build -- --base-href /Angular/
-  - cp dist/tp-angular/index.html dist/tp-angular/404.html
+  - cp dist/Projet-angular/app-alex/index.html dist/Projet-angular/app-alex/404.html
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/tp-angular
+  local_dir: dist/Projet-angular/app-alex
   on:
     branch: master
