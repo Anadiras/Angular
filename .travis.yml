@@ -2,22 +2,28 @@ language: node_js
 node_js:
   - "12"
 
+
 addons:
   chrome: stable
 
 cache:
-directories:
-  - ./node_modules
+  directories:
+    - ./node_modules
+
+install:
+  - npm ci
 
 script:
-  - npm run test --browsers=ChromeHeadlessr
-  - npm run build -- --base-href /Angular/
-  - cp dist/tp-angular/index.html dist/tp-angular/404.html
-  
- deploy:
-  provider: pages
-  local_dir: dist/tp-angular
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadless
 
-before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+before_deploy:
+  - npm run build -- --base-href /formation-angular-09-2021/
+  - cp dist/tp-angular/index.html dist/tp-angular/404.html
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/Angular-alex
+  on:
+    branch: master
