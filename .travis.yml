@@ -5,6 +5,10 @@ language: node_js
 node_js:
   - "12"
 
+branches:
+  only:
+    - develop
+    - master
 
 notifications:
   email: false
@@ -24,7 +28,7 @@ script:
 
 before_deploy:
   - npm run build -- --base-href /Angular/
-
+  - cp dist/tp-angular/index.html dist/tp-angular/404.html
 
 deploy:
   provider: pages
