@@ -24,7 +24,7 @@ script:
 
 before_deploy:
   - npm run build -- --base-href /formation-angular-09-2021/
-  - cp dist/tp-angular/index.html dist/tp-angular/404.html
+
 
 deploy:
   provider: pages
