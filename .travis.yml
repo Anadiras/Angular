@@ -10,7 +10,7 @@ directories:
   - ./node_modules
 
 script:
-  - npm run test
+  - npm run test --browsers=ChromeHeadlessr
   - npm run build -- --base-href /Angular/
   - cp dist/tp-angular/index.html dist/tp-angular/404.html
   
